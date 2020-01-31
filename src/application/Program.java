@@ -37,11 +37,11 @@ public class Program {
 			
 		}
 
-		File path = new File("C:\\out\\summary.txt");
+		File path = new File("C:\\out\\summary.csv");
 
 		try (BufferedWriter write = new BufferedWriter(new FileWriter(path))) {
 			for (products c : product) {
-				write.write(c.toString());
+				write.write(c.getName() + "," + String.format("%.2f", c.totalValue()));
 				write.newLine();
 			}
 
